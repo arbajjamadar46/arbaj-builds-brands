@@ -137,21 +137,29 @@ const Portfolio = () => {
               <div className="absolute -right-8 bottom-0 text-6xl text-white/20 font-serif">"</div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-white text-black font-semibold px-12 py-4 text-lg hover:scale-105 transition-all duration-300 hover:bg-white/90 shadow-2xl"
-              >
-                Let's Connect
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-white/50 text-white hover:bg-white/20 px-12 py-4 text-lg transition-all duration-300 backdrop-blur-sm hover:border-white/80"
-              >
-                View Portfolio
-              </Button>
+            {/* Button 1: Let's Connect */}
+<Button 
+  size="lg"
+  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+  className="relative group px-12 py-4 text-lg font-semibold text-white bg-white/10 backdrop-blur-md rounded-xl shadow-xl overflow-hidden border border-white/20 transition-transform duration-300 hover:scale-105 hover:border-white/40"
+>
+  <span className="relative z-10">Let's Connect</span>
+  {/* Shine overlay */}
+  <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm animate-shine" />
+</Button>
+
+{/* Button 2: View Portfolio */}
+<Button 
+  size="lg"
+  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+  className="relative group px-12 py-4 text-lg font-semibold text-white bg-white/10 backdrop-blur-md rounded-xl shadow-xl overflow-hidden border border-white/20 transition-transform duration-300 hover:scale-105 hover:border-white/40"
+>
+  <span className="relative z-10">View Portfolio</span>
+  {/* Shine overlay */}
+  <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm animate-shine" />
+</Button>
+
+
             </div>
           </div>
         </div>
@@ -201,10 +209,10 @@ const Portfolio = () => {
                   <div className="grid md:grid-cols-3 gap-8 mt-12">
                     <div className="text-center group">
                       <div className="relative mb-6">
-                        <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                          <Code2 className="w-8 h-8 text-white" />
+                        <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-secondary border-2 border-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                          <Code2 className="w-8 h-8 text-primary" />
                         </div>
-                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       </div>
                       <h3 className="font-bold text-lg mb-3">B.E. in Computer Engineering</h3>
                       <p className="text-muted-foreground leading-relaxed">Strong technical foundation with hands-on experience</p>
@@ -215,7 +223,7 @@ const Portfolio = () => {
                         <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-secondary border-2 border-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                           <Globe className="w-8 h-8 text-primary" />
                         </div>
-                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       </div>
                       <h3 className="font-bold text-lg mb-3">EY GDS / Edunet Intern</h3>
                       <p className="text-muted-foreground leading-relaxed">Full-stack development in enterprise environment</p>
@@ -223,10 +231,10 @@ const Portfolio = () => {
                     
                     <div className="text-center group">
                       <div className="relative mb-6">
-                        <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                          <BarChart3 className="w-8 h-8 text-white" />
+                        <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-secondary border-2 border-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                          <BarChart3 className="w-8 h-8 text-primary" />
                         </div>
-                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="absolute -top-2 -right-2 w-5 h-5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       </div>
                       <h3 className="font-bold text-lg mb-3">Marketing & Tech Blend</h3>
                       <p className="text-muted-foreground leading-relaxed">Unique perspective bridging two powerful worlds</p>
@@ -250,7 +258,7 @@ const Portfolio = () => {
             id="projects"
           >
             <div className="relative text-center mb-20">
-              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight">
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-3 tracking-tight pb-3">
                 Featured Projects
               </h2>
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
@@ -279,7 +287,7 @@ const Portfolio = () => {
                       </span>
                     ))}
                   </div>
-                  <Button variant="ghost" size="sm" className="mt-4 group-hover:text-primary">
+                  <Button variant="ghost" size="sm" className="mt-4 text-foreground hover:text-white transition-colors">
                     View Details <ExternalLink className="w-4 h-4 ml-2" />
                   </Button>
                 </Card>
@@ -331,7 +339,7 @@ const Portfolio = () => {
             id="skills"
           >
             <div className="relative text-center mb-20">
-              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight">
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight pb-3">
                 Skills & Technologies
               </h2>
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
@@ -362,7 +370,7 @@ const Portfolio = () => {
             id="testimonials"
           >
             <div className="relative text-center mb-20">
-              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight">
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight pb-3">
                 What People Say
               </h2>
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
@@ -407,7 +415,7 @@ const Portfolio = () => {
             id="contact"
           >
             <div className="relative text-center mb-20">
-              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight">
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight pb-3">
                 Let's Work Together
               </h2>
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
