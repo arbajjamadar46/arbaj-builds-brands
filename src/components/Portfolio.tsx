@@ -15,7 +15,7 @@ import {
   ExternalLink,
   Star
 } from 'lucide-react';
-import heroBackground from '@/assets/hero-bg.jpg';
+import heroBackground from '@/assets/hero-bg-bw.jpg';
 
 const Portfolio = () => {
   const [isVisible, setIsVisible] = useState<{ [key: string]: boolean }>({});
@@ -110,28 +110,64 @@ const Portfolio = () => {
             data-animate
             id="hero"
           >
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">
-              Arbaj Jamadar
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-light text-white/90 mb-8">
-              Brand Strategy Learner | Full Stack Developer | Digital Marketer
-            </h2>
-            <p className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto">
-              "Building bridges between engineering and marketing through design, code, and strategy."
-            </p>
-            <Button 
-              size="lg" 
-              className="gradient-primary text-white font-semibold px-8 py-4 text-lg hover:scale-105 transition-transform glow"
-            >
-              Let's Connect
-            </Button>
+            <div className="relative">
+              <h1 className="text-6xl md:text-8xl font-bold mb-6 gradient-text tracking-tight">
+                Arbaj Jamadar
+              </h1>
+              <div className="absolute -top-4 -left-4 w-24 h-24 border border-white/20 rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-4 -right-4 w-16 h-16 border border-white/30 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            </div>
+            <div className="space-y-4 mb-12">
+              <h2 className="text-2xl md:text-3xl font-light text-white/90 tracking-wide">
+                Brand Strategy Learner
+              </h2>
+              <div className="flex items-center justify-center space-x-4 text-white/70">
+                <span className="w-2 h-2 bg-white/60 rounded-full"></span>
+                <span className="text-lg md:text-xl font-medium">Full Stack Developer</span>
+                <span className="w-2 h-2 bg-white/60 rounded-full"></span>
+                <span className="text-lg md:text-xl font-medium">Digital Marketer</span>
+                <span className="w-2 h-2 bg-white/60 rounded-full"></span>
+              </div>
+            </div>
+            <div className="relative mb-16">
+              <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                "Building bridges between engineering and marketing through design, code, and strategy."
+              </p>
+              <div className="absolute -left-8 top-0 text-6xl text-white/20 font-serif">"</div>
+              <div className="absolute -right-8 bottom-0 text-6xl text-white/20 font-serif">"</div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="gradient-primary text-white font-semibold px-12 py-4 text-lg hover:scale-105 transition-all duration-300 glow border-gradient"
+              >
+                Let's Connect
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-white/30 text-white hover:bg-white/10 px-12 py-4 text-lg transition-all duration-300 backdrop-blur-sm"
+              >
+                View Portfolio
+              </Button>
+            </div>
           </div>
         </div>
 
-        {/* Floating elements */}
-        <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-primary/20 float"></div>
-        <div className="absolute bottom-20 right-20 w-24 h-24 rounded-full bg-accent/20 float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-10 w-16 h-16 rounded-full bg-white/10 float" style={{animationDelay: '4s'}}></div>
+        {/* Creative floating elements */}
+        <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-white/5 border border-white/10 float backdrop-blur-sm"></div>
+        <div className="absolute bottom-20 right-20 w-24 h-24 rounded-full bg-black/10 border border-white/20 float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-10 w-16 h-16 rounded-full bg-white/10 float animate-shimmer" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-1/4 right-1/4 w-8 h-8 border-2 border-white/30 rotate-45 float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-1/3 left-1/3 w-6 h-6 bg-white/20 rotate-12 float" style={{animationDelay: '3s'}}></div>
+        
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 opacity-10" 
+             style={{
+               backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+               backgroundSize: '30px 30px'
+             }}>
+        </div>
       </section>
 
       {/* About Section */}
@@ -144,35 +180,56 @@ const Portfolio = () => {
             data-animate
             id="about"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              About Me
-            </h2>
-            <div className="glass-card max-w-4xl mx-auto">
-              <p className="text-lg text-foreground/90 leading-relaxed mb-6">
-                I'm Arbaj Jamadar, a Computer Engineering graduate pivoting into the exciting world of marketing and brand strategy. 
-                My technical background helps me understand tools, data, and performance, while my creative projects help me reach people where it matters.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6 mt-8">
-                <div className="text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                    <Code2 className="w-6 h-6 text-primary" />
+            <div className="relative text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight">
+                About Me
+              </h2>
+              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="relative">
+              <div className="glass-card max-w-5xl mx-auto relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-primary"></div>
+                <div className="relative z-10">
+                  <p className="text-xl text-foreground/90 leading-relaxed mb-8 font-light">
+                    I'm <span className="font-semibold gradient-text">Arbaj Jamadar</span>, a Computer Engineering graduate pivoting into the exciting world of marketing and brand strategy. 
+                    My technical background helps me understand tools, data, and performance, while my creative projects help me reach people where it matters.
+                  </p>
+                  
+                  <div className="grid md:grid-cols-3 gap-8 mt-12">
+                    <div className="text-center group">
+                      <div className="relative mb-6">
+                        <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                          <Code2 className="w-8 h-8 text-white" />
+                        </div>
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      </div>
+                      <h3 className="font-bold text-lg mb-3">B.E. in Computer Engineering</h3>
+                      <p className="text-muted-foreground leading-relaxed">Strong technical foundation with hands-on experience</p>
+                    </div>
+                    
+                    <div className="text-center group">
+                      <div className="relative mb-6">
+                        <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-secondary border-2 border-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                          <Globe className="w-8 h-8 text-primary" />
+                        </div>
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      </div>
+                      <h3 className="font-bold text-lg mb-3">EY GDS / Edunet Intern</h3>
+                      <p className="text-muted-foreground leading-relaxed">Full-stack development in enterprise environment</p>
+                    </div>
+                    
+                    <div className="text-center group">
+                      <div className="relative mb-6">
+                        <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                          <BarChart3 className="w-8 h-8 text-white" />
+                        </div>
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      </div>
+                      <h3 className="font-bold text-lg mb-3">Marketing & Tech Blend</h3>
+                      <p className="text-muted-foreground leading-relaxed">Unique perspective bridging two powerful worlds</p>
+                    </div>
                   </div>
-                  <h3 className="font-semibold mb-2">B.E. in Computer Engineering</h3>
-                  <p className="text-sm text-muted-foreground">Strong technical foundation</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-accent/20 flex items-center justify-center">
-                    <Globe className="w-6 h-6 text-accent" />
-                  </div>
-                  <h3 className="font-semibold mb-2">EY GDS / Edunet Intern</h3>
-                  <p className="text-sm text-muted-foreground">Full-stack development experience</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                    <BarChart3 className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold mb-2">Marketing & Tech Blend</h3>
-                  <p className="text-sm text-muted-foreground">Unique perspective on strategy</p>
                 </div>
               </div>
             </div>
@@ -190,9 +247,12 @@ const Portfolio = () => {
             data-animate
             id="projects"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Featured Projects
-            </h2>
+            <div className="relative text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight">
+                Featured Projects
+              </h2>
+              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
                 <Card key={index} className="glass-card group hover:scale-105 transition-all duration-300">
@@ -237,9 +297,12 @@ const Portfolio = () => {
             data-animate
             id="services"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              What I Offer
-            </h2>
+            <div className="relative text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight">
+                What I Offer
+              </h2>
+              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service, index) => (
                 <Card key={index} className="glass-card text-center group hover:scale-105 transition-all duration-300">
@@ -265,14 +328,17 @@ const Portfolio = () => {
             data-animate
             id="skills"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Skills & Technologies
-            </h2>
+            <div className="relative text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight">
+                Skills & Technologies
+              </h2>
+              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+            </div>
             <div className="flex flex-wrap justify-center gap-4">
               {skills.map((skill, index) => (
                 <span 
                   key={index}
-                  className="glass px-4 py-2 rounded-full text-sm font-medium hover:scale-110 transition-transform cursor-pointer float"
+                  className="glass px-6 py-3 rounded-full text-sm font-medium hover:scale-110 transition-all duration-300 cursor-pointer magnetic-hover border border-primary/10 hover:border-primary/30"
                   style={{animationDelay: `${index * 0.1}s`}}
                 >
                   {skill}
@@ -293,9 +359,12 @@ const Portfolio = () => {
             data-animate
             id="testimonials"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              What People Say
-            </h2>
+            <div className="relative text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight">
+                What People Say
+              </h2>
+              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+            </div>
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="glass-card">
                 <div className="flex items-center mb-4">
@@ -335,9 +404,12 @@ const Portfolio = () => {
             data-animate
             id="contact"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Let's Work Together
-            </h2>
+            <div className="relative text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight">
+                Let's Work Together
+              </h2>
+              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+            </div>
             <Card className="glass-card">
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
