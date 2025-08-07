@@ -111,7 +111,7 @@ const Portfolio = () => {
             id="hero"
           >
             <div className="relative">
-              <h1 className="text-6xl md:text-8xl font-bold mb-6 gradient-text tracking-tight">
+              <h1 className="text-6xl md:text-8xl font-bold mb-6 text-white tracking-tight drop-shadow-2xl">
                 Arbaj Jamadar
               </h1>
               <div className="absolute -top-4 -left-4 w-24 h-24 border border-white/20 rounded-full animate-pulse"></div>
@@ -139,14 +139,16 @@ const Portfolio = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="gradient-primary text-white font-semibold px-12 py-4 text-lg hover:scale-105 transition-all duration-300 glow border-gradient"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-white text-black font-semibold px-12 py-4 text-lg hover:scale-105 transition-all duration-300 hover:bg-white/90 shadow-2xl"
               >
                 Let's Connect
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-12 py-4 text-lg transition-all duration-300 backdrop-blur-sm"
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border-white/50 text-white hover:bg-white/20 px-12 py-4 text-lg transition-all duration-300 backdrop-blur-sm hover:border-white/80"
               >
                 View Portfolio
               </Button>
