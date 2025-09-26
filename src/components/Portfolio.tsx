@@ -13,9 +13,19 @@ import {
   Mail,
   Send,
   ExternalLink,
-  Star
+  Star,
+  Calendar,
+  ArrowRight,
+  Eye,
+  Layers
 } from 'lucide-react';
 import heroBackground from '@/assets/hero-bg-bw.jpg';
+import adDesign1 from '@/assets/graphics/ad-design-1.jpg';
+import adDesign2 from '@/assets/graphics/ad-design-2.jpg';
+import bannerDesign from '@/assets/graphics/banner-design.jpg';
+import hrAdCreative from '@/assets/graphics/hr-ad-creative.jpg';
+import marketingFlyer from '@/assets/graphics/marketing-flyer.jpg';
+import websiteMockup from '@/assets/graphics/website-mockup.jpg';
 
 const Portfolio = () => {
   const [isVisible, setIsVisible] = useState<{ [key: string]: boolean }>({});
@@ -85,6 +95,103 @@ const Portfolio = () => {
       icon: <Code2 className="w-8 h-8" />,
       title: 'Full-Stack Web Development',
       description: 'Building robust web applications with modern technologies'
+    }
+  ];
+
+  const blogPosts = [
+    {
+      title: 'The Engineer\'s Guide to Marketing Analytics',
+      excerpt: 'How my technical background helps me decode marketing metrics and build data-driven strategies that actually convert.',
+      date: '2025-01-15',
+      category: 'Marketing Strategy',
+      readTime: '5 min read'
+    },
+    {
+      title: 'Why Full-Stack Developers Make Better Digital Marketers',
+      excerpt: 'Understanding code, databases, and user experience gives marketers a unique edge in the digital landscape.',
+      date: '2025-01-10',
+      category: 'Career Insights',
+      readTime: '7 min read'
+    },
+    {
+      title: 'Building Landing Pages That Convert: A Developer\'s Perspective',
+      excerpt: 'Technical optimization meets conversion psychology. Learn how to build landing pages that perform.',
+      date: '2025-01-05',
+      category: 'Web Development',
+      readTime: '6 min read'
+    },
+    {
+      title: 'Meta Ads Manager: Advanced Strategies for Tech Companies',
+      excerpt: 'Deep dive into campaign optimization, audience targeting, and performance tracking for SaaS and tech startups.',
+      date: '2024-12-28',
+      category: 'Paid Advertising',
+      readTime: '8 min read'
+    },
+    {
+      title: 'From Code to Creative: My Journey into Brand Strategy',
+      excerpt: 'How I transitioned from computer engineering to marketing and what I learned about building brands.',
+      date: '2024-12-20',
+      category: 'Personal Story',
+      readTime: '4 min read'
+    },
+    {
+      title: 'Google Analytics 4 for Developers: Beyond Basic Tracking',
+      excerpt: 'Advanced GA4 implementation, custom events, and how to build marketing dashboards that matter.',
+      date: '2024-12-15',
+      category: 'Analytics',
+      readTime: '9 min read'
+    },
+    {
+      title: 'The Future of Marketing: Where Tech Meets Creativity',
+      excerpt: 'Exploring AI tools, automation, and how technical skills amplify creative marketing campaigns.',
+      date: '2024-12-08',
+      category: 'Future Trends',
+      readTime: '6 min read'
+    }
+  ];
+
+  const graphicsShowcase = [
+    {
+      title: 'Modern Social Media Ad',
+      description: 'Clean minimalist design for tech startup campaign',
+      image: adDesign1,
+      category: 'Social Media',
+      tools: ['Canva', 'Figma']
+    },
+    {
+      title: 'Instagram Story Template',
+      description: 'Branded story design for digital marketing agency',
+      image: adDesign2,
+      category: 'Social Media',
+      tools: ['Canva', 'Adobe Creative Suite']
+    },
+    {
+      title: 'Web Development Banner',
+      description: 'Professional service banner with modern aesthetics',
+      image: bannerDesign,
+      category: 'Web Banner',
+      tools: ['Figma', 'Photoshop']
+    },
+    {
+      title: 'HR Recruitment Ad',
+      description: 'Facebook ad creative for SproutQ recruitment campaign',
+      image: hrAdCreative,
+      category: 'Paid Ads',
+      tools: ['Meta Ads Manager', 'Canva']
+    },
+    {
+      title: 'Marketing Consultation Flyer',
+      description: 'Elegant flyer design for business consultation services',
+      image: marketingFlyer,
+      category: 'Print Design',
+      tools: ['Canva', 'InDesign']
+    },
+    {
+      title: 'Website UI Mockup',
+      description: 'Responsive web design showcase with modern interface',
+      image: websiteMockup,
+      category: 'Web Design',
+      tools: ['Figma', 'React', 'Tailwind']
     }
   ];
 
@@ -399,6 +506,124 @@ const Portfolio = () => {
                 </p>
                 <div className="text-sm text-muted-foreground">— Digital Mentor</div>
               </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div 
+            className={`transition-all duration-1000 delay-600 ${
+              isVisible['blog'] ? 'animate-fade-in-up' : 'opacity-0'
+            }`}
+            data-animate
+            id="blog"
+          >
+            <div className="relative text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight pb-3">
+                Latest Blog Posts
+              </h2>
+              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+              <p className="text-lg text-muted-foreground mt-6 max-w-2xl mx-auto">
+                Insights on marketing strategy, web development, and the intersection of technology and creativity
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogPosts.map((post, index) => (
+                <Card key={index} className="glass-card group hover:scale-105 transition-all duration-300 cursor-pointer">
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="inline-block px-3 py-1 text-xs font-semibold bg-primary/20 text-primary rounded-full">
+                        {post.category}
+                      </span>
+                      <div className="flex items-center text-xs text-muted-foreground">
+                        <Calendar className="w-3 h-3 mr-1" />
+                        {new Date(post.date).toLocaleDateString()}
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-4 line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">{post.readTime}</span>
+                      <Button variant="ghost" size="sm" className="text-primary hover:text-white transition-colors">
+                        Read More <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Graphics Showcase Section */}
+      <section className="py-24 px-6 bg-secondary/20">
+        <div className="max-w-6xl mx-auto">
+          <div 
+            className={`transition-all duration-1000 delay-700 ${
+              isVisible['graphics'] ? 'animate-slide-in-right' : 'opacity-0'
+            }`}
+            data-animate
+            id="graphics"
+          >
+            <div className="relative text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight pb-3">
+                Creative Showcase
+              </h2>
+              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+              <p className="text-lg text-muted-foreground mt-6 max-w-2xl mx-auto">
+                Ad designs, creatives, and visual content that converts and engages audiences
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {graphicsShowcase.map((graphic, index) => (
+                <Card key={index} className="glass-card group hover:scale-105 transition-all duration-300 overflow-hidden">
+                  <div className="relative overflow-hidden rounded-lg mb-4">
+                    <img 
+                      src={graphic.image} 
+                      alt={graphic.title}
+                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <Button variant="ghost" size="sm" className="text-white border-white/20 hover:bg-white/20">
+                        <Eye className="w-4 h-4 mr-2" />
+                        View Full Size
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="inline-block px-3 py-1 text-xs font-semibold bg-accent/20 text-accent rounded-full">
+                        {graphic.category}
+                      </span>
+                      <Layers className="w-4 h-4 text-muted-foreground" />
+                    </div>
+                    <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+                      {graphic.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {graphic.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {graphic.tools.map((tool, toolIndex) => (
+                        <span 
+                          key={toolIndex}
+                          className="px-2 py-1 text-xs bg-primary/10 text-primary rounded"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
