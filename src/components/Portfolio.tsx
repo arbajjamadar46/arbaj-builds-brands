@@ -271,57 +271,18 @@ const Portfolio = () => {
           </div>
         </div>
 
-        {/* Creative floating elements */}
-        <div className="absolute top-20 left-20 w-32 h-32 rounded-full bg-white/5 border border-white/10 float backdrop-blur-sm"></div>
-        <div className="absolute bottom-20 right-20 w-24 h-24 rounded-full bg-black/10 border border-white/20 float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-10 w-16 h-16 rounded-full bg-white/10 float animate-shimmer" style={{animationDelay: '4s'}}></div>
-        <div className="absolute top-1/4 right-1/4 w-8 h-8 border-2 border-white/30 rotate-45 float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-1/3 left-1/3 w-6 h-6 bg-white/20 rotate-12 float" style={{animationDelay: '3s'}}></div>
+        {/* Minimal floating elements */}
+        <div className="absolute top-20 left-20 w-16 h-16 rounded-full bg-white/5 border border-white/10 animate-pulse" style={{animationDuration: '4s'}}></div>
+        <div className="absolute bottom-20 right-20 w-12 h-12 rounded-full bg-white/10 animate-pulse" style={{animationDelay: '2s', animationDuration: '3s'}}></div>
         
-        {/* Interactive Animated Grid Overlay */}
+        {/* Simple grid overlay */}
         <div 
-          className="absolute inset-0 opacity-20 transition-all duration-1000 hover:opacity-30"
-          onMouseMove={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            e.currentTarget.style.background = `
-              radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 20%, transparent 40%),
-              radial-gradient(circle at 1px 1px, white 1px, transparent 0)
-            `;
-            e.currentTarget.style.backgroundSize = `200px 200px, 25px 25px`;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = `
-              linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.05) 50%, transparent 60%),
-              radial-gradient(circle at 1px 1px, white 1px, transparent 0)
-            `;
-            e.currentTarget.style.backgroundSize = `400px 400px, 30px 30px`;
-          }}
+          className="absolute inset-0 opacity-10"
           style={{
-            background: `
-              linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.05) 50%, transparent 60%),
-              radial-gradient(circle at 1px 1px, white 1px, transparent 0)
-            `,
-            backgroundSize: '400px 400px, 30px 30px',
-            animation: 'float 20s ease-in-out infinite, shimmer 8s ease-in-out infinite alternate'
+            background: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+            backgroundSize: '40px 40px'
           }}
-        >
-          {/* Animated particles */}
-          <div className="absolute top-20 left-10 w-2 h-2 bg-white/30 rounded-full animate-pulse" style={{animationDelay: '0s', animationDuration: '3s'}}></div>
-          <div className="absolute top-40 right-20 w-1 h-1 bg-white/40 rounded-full animate-pulse" style={{animationDelay: '1s', animationDuration: '4s'}}></div>
-          <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-white/25 rounded-full animate-pulse" style={{animationDelay: '2s', animationDuration: '5s'}}></div>
-          <div className="absolute top-3/4 right-1/3 w-2 h-2 bg-white/20 rounded-full animate-pulse" style={{animationDelay: '3s', animationDuration: '3.5s'}}></div>
-          <div className="absolute top-1/3 left-2/3 w-1 h-1 bg-white/35 rounded-full animate-pulse" style={{animationDelay: '4s', animationDuration: '4.5s'}}></div>
-          
-          {/* Dynamic light rays */}
-          <div className="absolute top-0 left-1/4 w-0.5 h-full bg-gradient-to-b from-white/10 via-transparent to-transparent animate-pulse" style={{animationDelay: '1s', animationDuration: '6s'}}></div>
-          <div className="absolute top-0 right-1/3 w-0.5 h-full bg-gradient-to-b from-white/8 via-transparent to-transparent animate-pulse" style={{animationDelay: '3s', animationDuration: '7s'}}></div>
-          
-          {/* Rotating geometric shapes */}
-          <div className="absolute top-24 right-24 w-8 h-8 border border-white/20 rotate-45 animate-spin" style={{animationDuration: '15s'}}></div>
-          <div className="absolute bottom-28 left-28 w-6 h-6 border border-white/15 rotate-12 animate-spin" style={{animationDuration: '20s', animationDirection: 'reverse'}}></div>
-        </div>
+        ></div>
       </section>
 
       {/* About Section */}
@@ -569,7 +530,16 @@ const Portfolio = () => {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((post, index) => (
-                <Card key={index} className="glass-card group hover:scale-105 transition-all duration-300 cursor-pointer">
+                <Card 
+                  key={index} 
+                  className="glass-card group hover:scale-105 transition-all duration-300 cursor-pointer"
+                  onClick={() => {
+                    // Create a slug from the title for the URL
+                    const slug = post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                    // For demo purposes, open in new tab - you can replace with actual blog URL
+                    window.open(`/blog/${slug}`, '_blank');
+                  }}
+                >
                   <div className="mb-4">
                     <div className="flex items-center justify-between mb-3">
                       <span className="inline-block px-3 py-1 text-xs font-semibold bg-primary/20 text-primary rounded-full">
@@ -588,7 +558,16 @@ const Portfolio = () => {
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">{post.readTime}</span>
-                      <Button variant="ghost" size="sm" className="text-primary hover:text-white transition-colors">
+                      <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        className="text-primary hover:text-white transition-colors"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          const slug = post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                          window.open(`/blog/${slug}`, '_blank');
+                        }}
+                      >
                         Read More <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
                     </div>
