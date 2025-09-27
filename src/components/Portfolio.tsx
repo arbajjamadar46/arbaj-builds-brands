@@ -158,24 +158,24 @@ const Portfolio = () => {
   const graphicsShowcase = [
     {
       title: 'Modern Social Media Ad',
-      description: 'Clean minimalist design for tech startup campaign',
+      description: 'Clean minimalist design for Fin-tech startup campaign',
       image: adDesign1,
       category: 'Social Media',
-      tools: ['Canva', 'Figma']
+      tools: ['Canva', 'CorelDraw']
     },
     {
-      title: 'Instagram Story Template',
-      description: 'Branded story design for digital marketing agency',
+      title: 'Corporate Brochure Design',
+      description: 'Brochure Design for business need',
       image: adDesign2,
-      category: 'Social Media',
+      category: 'Brochure Design',
       tools: ['Canva', 'Adobe Creative Suite']
     },
     {
-      title: 'Web Development Banner',
+      title: 'Facebook Banner',
       description: 'Professional service banner with modern aesthetics',
       image: bannerDesign,
-      category: 'Web Banner',
-      tools: ['Figma', 'Photoshop']
+      category: 'Social Media',
+      tools: ['Canva', 'Photoshop']
     },
     {
       title: 'HR Recruitment Ad',
@@ -185,11 +185,11 @@ const Portfolio = () => {
       tools: ['Meta Ads Manager', 'Canva']
     },
     {
-      title: 'Marketing Consultation Flyer',
-      description: 'Elegant flyer design for business consultation services',
+      title: 'Flyer Designs',
+      description: 'Elegant flyer design for Various Purpose ',
       image: marketingFlyer,
       category: 'Print Design',
-      tools: ['Canva', 'InDesign']
+      tools: ['Canva', 'Photoshop','CorelDraw']
     },
     {
       title: 'Website UI Mockup',
@@ -266,9 +266,9 @@ const Portfolio = () => {
                 </div>
                 
                 <div className="space-y-4 mb-12">
-                  <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-white/90 tracking-wide">
+                  {/* <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-white/90 tracking-wide">
                     Brand Strategy Learner
-                  </h2>
+                  </h2> */}
                   <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/70">
                     <span className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-white/60 rounded-full"></span>
@@ -657,10 +657,10 @@ const Portfolio = () => {
                       className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <Button variant="ghost" size="sm" className="text-white border-white/20 hover:bg-white/20">
+                      {/* <Button variant="ghost" size="sm" className="text-white border-white/20 hover:bg-white/20">
                         <Eye className="w-4 h-4 mr-2" />
                         View Full Size
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                   <div className="mb-4">
