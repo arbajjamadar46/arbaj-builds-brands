@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { 
   Code2, 
   Palette, 
@@ -19,6 +20,7 @@ import {
   Eye,
   Layers
 } from 'lucide-react';
+import profileImage from '@/assets/profile-image.jpg';
 import heroBackground from '@/assets/hero-bg-bw.jpg';
 import adDesign1 from '@/assets/graphics/ad-design-1.jpg';
 import adDesign2 from '@/assets/graphics/ad-design-2.jpg';
@@ -212,7 +214,7 @@ const Portfolio = () => {
         <div className="absolute inset-0 gradient-hero opacity-80"></div>
         <div className="absolute inset-0 bg-black/30"></div>
         
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div 
             className={`transition-all duration-1000 ${
               isVisible['hero'] ? 'animate-fade-in-up' : 'opacity-0'
@@ -220,56 +222,97 @@ const Portfolio = () => {
             data-animate
             id="hero"
           >
-            <div className="relative">
-              <h1 className="text-6xl md:text-8xl font-bold mb-6 text-white tracking-tight drop-shadow-2xl">
-                Arbaj Jamadar
-              </h1>
-              <div className="absolute -top-4 -left-4 w-24 h-24 border border-white/20 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 border border-white/30 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-            </div>
-            <div className="space-y-4 mb-12">
-              <h2 className="text-2xl md:text-3xl font-light text-white/90 tracking-wide">
-                Brand Strategy Learner
-              </h2>
-              <div className="flex items-center justify-center space-x-4 text-white/70">
-                <span className="w-2 h-2 bg-white/60 rounded-full"></span>
-                <span className="text-lg md:text-xl font-medium">Full Stack Developer</span>
-                <span className="w-2 h-2 bg-white/60 rounded-full"></span>
-                <span className="text-lg md:text-xl font-medium">Digital Marketer</span>
-                <span className="w-2 h-2 bg-white/60 rounded-full"></span>
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-16">
+              {/* Profile Image */}
+              <div className="relative group order-1 lg:order-2">
+                <div className="relative">
+                  {/* Premium frame with multiple gradient layers */}
+                  <div className="w-80 h-80 rounded-full p-1.5 bg-gradient-to-br from-white/30 via-white/10 to-transparent backdrop-blur-sm">
+                    <div className="w-full h-full rounded-full p-1 bg-gradient-to-br from-transparent via-white/5 to-white/30">
+                      <div className="w-full h-full rounded-full p-0.5 bg-gradient-to-br from-white/20 to-transparent">
+                        <Avatar className="w-full h-full border-2 border-white/20">
+                          <AvatarImage 
+                            src={profileImage} 
+                            alt="Arbaj Jamadar - Brand Strategy Learner & Full Stack Developer" 
+                            className="object-cover filter grayscale contrast-110 brightness-110 group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                          />
+                          <AvatarFallback className="text-6xl bg-white/10 text-white border-2 border-white/30">AJ</AvatarFallback>
+                        </Avatar>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Premium glow effects */}
+                  <div className="absolute -inset-8 bg-gradient-to-r from-white/20 via-white/5 to-white/20 rounded-full opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700"></div>
+                  <div className="absolute -inset-4 bg-white/10 rounded-full opacity-30 group-hover:opacity-60 blur-xl transition-opacity duration-500"></div>
+                  
+                  {/* Floating animation */}
+                  <div className="absolute inset-0 animate-float"></div>
+                  
+                  {/* Decorative elements */}
+                  <div className="absolute -top-6 -right-6 w-12 h-12 border-2 border-white/40 rounded-full animate-pulse"></div>
+                  <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-white/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                </div>
               </div>
-            </div>
-            <div className="relative mb-16">
-              <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                "Building bridges between engineering and marketing through design, code, and strategy."
-              </p>
-              <div className="absolute -left-8 top-0 text-6xl text-white/20 font-serif">"</div>
-              <div className="absolute -right-8 bottom-0 text-6xl text-white/20 font-serif">"</div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {/* Button 1: Let's Connect */}
-<Button 
-  size="lg"
-  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-  className="relative group px-12 py-4 text-lg font-semibold text-white bg-white/10 backdrop-blur-md rounded-xl shadow-xl overflow-hidden border border-white/20 transition-transform duration-300 hover:scale-105 hover:border-white/40"
->
-  <span className="relative z-10">Let's Connect</span>
-  {/* Shine overlay */}
-  <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm animate-shine" />
-</Button>
 
-{/* Button 2: View Portfolio */}
-<Button 
-  size="lg"
-  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-  className="relative group px-12 py-4 text-lg font-semibold text-white bg-white/10 backdrop-blur-md rounded-xl shadow-xl overflow-hidden border border-white/20 transition-transform duration-300 hover:scale-105 hover:border-white/40"
->
-  <span className="relative z-10">View Portfolio</span>
-  {/* Shine overlay */}
-  <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm animate-shine" />
-</Button>
+              {/* Content */}
+              <div className="text-center lg:text-left order-2 lg:order-1 max-w-2xl">
+                <div className="relative mb-8">
+                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white tracking-tight drop-shadow-2xl">
+                    Arbaj Jamadar
+                  </h1>
+                  <div className="absolute -top-4 -left-4 w-20 h-20 border border-white/20 rounded-full animate-pulse"></div>
+                  <div className="absolute -bottom-4 -right-4 w-14 h-14 border border-white/30 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                </div>
+                
+                <div className="space-y-4 mb-12">
+                  <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-white/90 tracking-wide">
+                    Brand Strategy Learner
+                  </h2>
+                  <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-white/70">
+                    <span className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-white/60 rounded-full"></span>
+                      <span className="text-base md:text-lg font-medium">Full Stack Developer</span>
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-white/60 rounded-full"></span>
+                      <span className="text-base md:text-lg font-medium">Digital Marketer</span>
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="relative mb-16">
+                  <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
+                    "Building bridges between engineering and marketing through design, code, and strategy."
+                  </p>
+                  <div className="absolute -left-6 top-0 text-5xl text-white/20 font-serif">"</div>
+                  <div className="absolute -right-6 bottom-0 text-5xl text-white/20 font-serif">"</div>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  {/* Button 1: Let's Connect */}
+                  <Button 
+                    size="lg"
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="relative group px-12 py-4 text-lg font-semibold text-white bg-white/10 backdrop-blur-md rounded-xl shadow-xl overflow-hidden border border-white/20 transition-transform duration-300 hover:scale-105 hover:border-white/40"
+                  >
+                    <span className="relative z-10">Let's Connect</span>
+                    {/* Shine overlay */}
+                    <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm animate-shine" />
+                  </Button>
 
-
+                  {/* Button 2: View Portfolio */}
+                  <Button 
+                    size="lg"
+                    onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="relative group px-12 py-4 text-lg font-semibold text-white bg-white/10 backdrop-blur-md rounded-xl shadow-xl overflow-hidden border border-white/20 transition-transform duration-300 hover:scale-105 hover:border-white/40"
+                  >
+                    <span className="relative z-10">View Portfolio</span>
+                    {/* Shine overlay */}
+                    <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm animate-shine" />
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
