@@ -49,9 +49,9 @@ const Portfolio = () => {
   }, []);
 
   const skills = [
-    'React.js', 'Tailwind CSS', 'Django', 'PostgreSQL', 'GitHub', 
-    'Canva', 'Figma', 'Google Analytics', 'Meta Ads', 'Looker Studio',
-    'Content Writing', 'Flyer Design'
+    'Meta Ads','Google Ads', 'Brand Strategy',
+    'Content Writing', 'Flyer Design', 'Social Media Management', 'Lead Generation','React.js', 'Tailwind CSS', 'Django', 'MySQL', 'GitHub', 
+    'Canva', 'Photoshop', 'Google Analytics', 
   ];
 
   const projects = [
@@ -59,19 +59,22 @@ const Portfolio = () => {
       title: 'SproutQ Marketing Strategy',
       description: 'Designed ad strategies and flyers for HR recruiters. Built paid campaigns that converted.',
       tools: ['Meta Ads Manager', 'Canva', 'ChatGPT', 'Google Analytics'],
-      type: 'Marketing Strategy'
+      type: 'Marketing Strategy',
+      link: 'https://sproutq.com/' 
     },
     {
       title: 'IoT-based Home Automation',
       description: 'Used Arduino and NodeMCU to automate appliances via web dashboard.',
       tools: ['Arduino', 'NodeMCU', 'Web Dashboard', 'IoT'],
-      type: 'Full Stack Development'
+      type: 'Full Stack Development',
+      link: 'https://github.com/arbajjamadar46/Home-Automation' 
     },
     {
       title: 'Nursery Management System',
       description: 'Developed a web-based system to manage plant nursery operations.',
       tools: ['PHP', 'MySQL', 'Web Development', 'Database'],
-      type: 'Web Development'
+      type: 'Web Development',
+      link: 'https://github.com/arbajjamadar46/Nursery-project' // Example link
     }
   ];
 
@@ -392,9 +395,12 @@ const Portfolio = () => {
                       </span>
                     ))}
                   </div>
-                  <Button variant="ghost" size="sm" className="mt-4 text-foreground hover:text-white transition-colors">
-                    View Details <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
+                  {/* ✅ STEP 2: WRAPPED BUTTON WITH ANCHOR TAG */}
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    <Button variant="ghost" size="sm" className="mt-4 text-foreground hover:text-white transition-colors">
+                      View Details <ExternalLink className="w-4 h-4 ml-2" />
+                    </Button>
+                  </a>
                 </Card>
               ))}
             </div>
