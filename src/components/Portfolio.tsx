@@ -662,7 +662,15 @@ const Portfolio = () => {
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             </div>
             <Card className="glass-card">
-              <form className="space-y-6">
+              <form 
+                className="space-y-6"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  // Handle form submission here
+                  console.log('Form submitted');
+                  // You can add toast notification or other logic here
+                }}
+              >
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <Input 
