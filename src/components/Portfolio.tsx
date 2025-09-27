@@ -766,13 +766,19 @@ const Portfolio = () => {
               Arbaj Jamadar
             </div>
             <div className="flex space-x-6 mb-4 md:mb-0">
-              <a href="https://www.linkedin.com/in/arbajjamadar46/" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/arbajjamadar46/" 
+              target="_blank"
+              rel="noopener noreferrer"className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="https://github.com/arbajjamadar46" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://github.com/arbajjamadar46"
+              target="_blank"
+              rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Github className="w-6 h-6" />
               </a>
-              <a href="mailto:arbajjamadar46@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=arbajjamadar46@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"className="text-muted-foreground hover:text-primary transition-colors">
                 <Mail className="w-6 h-6" />
               </a>
             </div>
