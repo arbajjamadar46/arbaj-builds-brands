@@ -513,51 +513,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div 
-            className={`transition-all duration-1000 delay-600 ${
-              isVisible['testimonials'] ? 'animate-slide-in-left' : 'opacity-0'
-            }`}
-            data-animate
-            id="testimonials"
-          >
-            <div className="relative text-center mb-20">
-              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight pb-3">
-                What People Say
-              </h2>
-              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="glass-card">
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-accent fill-current" />
-                  ))}
-                </div>
-                <p className="text-lg italic mb-4">
-                  "Arbaj's ability to blend development with digital strategy is a rare combo. 
-                  His work on SproutQ helped us attract HRs with effective messaging."
-                </p>
-                <div className="text-sm text-muted-foreground">— SproutQ Team</div>
-              </Card>
-              <Card className="glass-card">
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-accent fill-current" />
-                  ))}
-                </div>
-                <p className="text-lg italic mb-4">
-                  "He understands both technical and creative sides of marketing. A valuable asset."
-                </p>
-                <div className="text-sm text-muted-foreground">— Digital Mentor</div>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      
       {/* Blog Section */}
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
@@ -628,6 +584,8 @@ const Portfolio = () => {
         </div>
       </section>
 
+
+
       {/* Graphics Showcase Section */}
       <section className="py-24 px-6 bg-secondary/20">
         <div className="max-w-6xl mx-auto">
@@ -693,6 +651,52 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div 
+            className={`transition-all duration-1000 delay-600 ${
+              isVisible['testimonials'] ? 'animate-slide-in-left' : 'opacity-0'
+            }`}
+            data-animate
+            id="testimonials"
+          >
+            <div className="relative text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 tracking-tight pb-3">
+                What People Say
+              </h2>
+              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="glass-card">
+                <div className="flex items-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-accent fill-current" />
+                  ))}
+                </div>
+                <p className="text-lg italic mb-4">
+                  "Arbaj's ability to blend development with digital strategy is a rare combo. 
+                  His work on SproutQ helped us attract HRs with effective messaging."
+                </p>
+                <div className="text-sm text-muted-foreground">— SproutQ Team</div>
+              </Card>
+              <Card className="glass-card">
+                <div className="flex items-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-accent fill-current" />
+                  ))}
+                </div>
+                <p className="text-lg italic mb-4">
+                  "He understands both technical and creative sides of marketing. A valuable asset."
+                </p>
+                <div className="text-sm text-muted-foreground">— Digital Mentor</div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Contact Section */}
       <section className="py-24 px-6 bg-secondary/20">
@@ -762,13 +766,13 @@ const Portfolio = () => {
               Arbaj Jamadar
             </div>
             <div className="flex space-x-6 mb-4 md:mb-0">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/arbajjamadar46/" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://github.com/arbajjamadar46" className="text-muted-foreground hover:text-primary transition-colors">
                 <Github className="w-6 h-6" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:arbajjamadar46@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                 <Mail className="w-6 h-6" />
               </a>
             </div>
