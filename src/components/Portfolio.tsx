@@ -20,6 +20,7 @@ import {
   Eye,
   Layers
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import profileImage from '@/assets/profile-image.jpg';
 import heroBackground from '@/assets/hero-bg-bw.jpg';
 import adDesign1 from '@/assets/graphics/ad-design-1.jpg';
@@ -538,17 +539,6 @@ const Portfolio = () => {
                 <Card 
                   key={index} 
                   className="glass-card group hover:scale-105 transition-all duration-300 cursor-pointer"
-                  onClick={() => {
-                    // Create a slug from the title for the URL
-                    const slug = post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-                    // Navigate to the actual blog post
-                    if (slug === 'the-engineers-guide-to-marketing-analytics') {
-                      window.open(`/blog/${slug}`, '_blank');
-                    } else {
-                      // For other posts, show coming soon or handle as needed
-                      window.alert('This blog post is coming soon!');
-                    }
-                  }}
                 >
                   <div className="mb-4">
                     <div className="flex items-center justify-between mb-3">
@@ -568,22 +558,33 @@ const Portfolio = () => {
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">{post.readTime}</span>
-                      <Button 
-                        variant="ghost" 
-                        size="sm" 
-                        className="text-primary hover:text-white transition-colors"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          const slug = post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-                          if (slug === 'the-engineers-guide-to-marketing-analytics') {
-                            window.open(`/blog/${slug}`, '_blank');
-                          } else {
-                            window.alert('This blog post is coming soon!');
-                          }
-                        }}
-                      >
-                        Read More <ArrowRight className="w-4 h-4 ml-2" />
-                      </Button>
+                      {(() => {
+                        const slug = post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                        if (slug === 'the-engineers-guide-to-marketing-analytics' || slug === 'why-full-stack-developers-make-better-digital-marketers') {
+                          return (
+                            <Link to={`/blog/${slug}`}>
+                              <Button 
+                                variant="ghost" 
+                                size="sm" 
+                                className="text-primary hover:text-white transition-colors"
+                              >
+                                Read More <ArrowRight className="w-4 h-4 ml-2" />
+                              </Button>
+                            </Link>
+                          );
+                        } else {
+                          return (
+                            <Button 
+                              variant="ghost" 
+                              size="sm" 
+                              className="text-muted-foreground cursor-not-allowed"
+                              disabled
+                            >
+                              Coming Soon
+                            </Button>
+                          );
+                        }
+                      })()}
                     </div>
                   </div>
                 </Card>
