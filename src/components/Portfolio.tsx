@@ -541,8 +541,13 @@ const Portfolio = () => {
                   onClick={() => {
                     // Create a slug from the title for the URL
                     const slug = post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-                    // For demo purposes, open in new tab - you can replace with actual blog URL
-                    window.open(`/blog/${slug}`, '_blank');
+                    // Navigate to the actual blog post
+                    if (slug === 'the-engineers-guide-to-marketing-analytics') {
+                      window.open(`/blog/${slug}`, '_blank');
+                    } else {
+                      // For other posts, show coming soon or handle as needed
+                      window.alert('This blog post is coming soon!');
+                    }
                   }}
                 >
                   <div className="mb-4">
@@ -570,7 +575,11 @@ const Portfolio = () => {
                         onClick={(e) => {
                           e.stopPropagation();
                           const slug = post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-                          window.open(`/blog/${slug}`, '_blank');
+                          if (slug === 'the-engineers-guide-to-marketing-analytics') {
+                            window.open(`/blog/${slug}`, '_blank');
+                          } else {
+                            window.alert('This blog post is coming soon!');
+                          }
                         }}
                       >
                         Read More <ArrowRight className="w-4 h-4 ml-2" />
